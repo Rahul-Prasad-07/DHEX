@@ -1,0 +1,229 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* General container styling for the Assets Selector */
+.assets-selector {
+  position: relative;
+  width: 200px;
+  font-family: Arial, sans-serif;
+}
+
+.no-results {
+  padding: 10px;
+  color: #888;
+  text-align: center;
+  font-size: 14px;
+}
+
+
+.selected-token {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.selected-token:hover {
+  background-color: #f9f9f9;
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  max-height: 200px;
+  overflow-y: auto;
+  margin-top: 8px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 8px;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  outline: none;
+  font-size: 14px;
+}
+
+.token-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.token-item {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-size: 14px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.token-item:hover {
+  background-color: #f9f9f9;
+}
+
+.token-name {
+  font-weight: 500;
+}
+
+.token-symbol {
+  font-size: 12px;
+  color: #888;
+  font-weight: 400;
+}
+
+
+
+/* HTML: <div class="loader"></div> */
+/* .loader {
+  height: 15px;
+  width: 60px;
+  --c:no-repeat repeating-linear-gradient(#0000 0 6px,#000 0 9px,#0000 0 15px);
+  background: var(--c), var(--c), var(--c), var(--c);
+  background-size: 26% 200%;
+  animation: l4 1.5s infinite linear;
+}
+@keyframes l4 {
+  0%,
+  70%,
+  100%  {background-position: calc(0*100%/3) 100%,calc(1*100%/3) 100%,calc(2*100%/3) 100%,calc(3*100%/3) 100%}
+  17.5% {background-position: calc(0*100%/3) 0   ,calc(1*100%/3) 100%,calc(2*100%/3) 100%,calc(3*100%/3) 100%}
+  35%   {background-position: calc(0*100%/3) 0   ,calc(1*100%/3) 0   ,calc(2*100%/3) 100%,calc(3*100%/3) 100%}
+  52.5% {background-position: calc(0*100%/3) 0   ,calc(1*100%/3) 0   ,calc(2*100%/3) 0   ,calc(3*100%/3) 100%}
+  69.99%{background-position: calc(0*100%/3) 0   ,calc(1*100%/3) 0   ,calc(2*100%/3) 0   ,calc(3*100%/3) 0   }
+} */
+
+
+/* HTML: <div class="loader"></div> */
+/* .loader {
+  height: 60px;
+  aspect-ratio: 1;
+  position: relative;
+}
+.loader::before,
+.loader::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  transform-origin: bottom;
+}
+.loader::after {
+  background:
+    radial-gradient(at 75% 15%,#fffb,#0000 35%),
+    radial-gradient(at 80% 40%,#0000,#0008),
+    radial-gradient(circle  5px,#fff 94%,#0000),
+    radial-gradient(circle 10px,#000 94%,#0000),
+    linear-gradient(#F93318 0 0) top   /100% calc(50% - 5px),
+    linear-gradient(#fff    0 0) bottom/100% calc(50% - 5px)
+    #000;
+  background-repeat: no-repeat;
+  animation: l20 1s infinite cubic-bezier(0.5,120,0.5,-120);
+}
+.loader::before {
+  background:#ddd;
+  filter: blur(8px);
+  transform: scaleY(0.4) translate(-13px, 0px);
+}
+@keyframes l20 { 
+ 30%,70% {transform:rotate(0deg)}
+ 49.99%  {transform:rotate(0.2deg)}
+ 50%     {transform:rotate(-0.2deg)}
+} */
+
+
+/* HTML: <div class="loader"></div> */
+/* HTML: <div class="loader"></div> */
+.loader {
+  height: 30px;
+  aspect-ratio: .866;
+  display: grid;
+  background: conic-gradient(from -121deg at right,#0000, #BF1E62 1deg 60deg,#0000 61deg);
+  animation: l11-0 2s infinite;
+  transform-origin: 33% 50%;
+}
+.loader:before,
+.loader:after {
+  content: "";
+  grid-area: 1/1;
+  background: conic-gradient(from -121deg at right,#0000, #FFA588 1deg 60deg,#0000 61deg);
+  animation: inherit;
+  animation-name: l11-1;
+}
+.loader:after {
+  --s:20px;
+  background: conic-gradient(from -121deg at right,#0000, #027B7F 1deg 60deg,#0000 61deg);
+}
+@keyframes l11-0{
+  0%   {transform:translate(-20px) rotate(0)      translate(0)    rotate(0)}
+  25%  {transform:translate( 20px) rotate(0)      translate(0)    rotate(0)}
+  50%  {transform:translate( 20px) rotate(180deg) translate(0)    rotate(0)}
+  75%  {transform:translate( 20px) rotate(180deg) translate(40px) rotate(0)}
+  100% {transform:translate( 20px) rotate(180deg) translate(40px) rotate(180deg)}
+}
+@keyframes l11-1{ 
+  0%,25%,50%,75%,100% {transform: translate(0)}
+  12.5%,62.5% {transform: translate(var(--s,10px))}
+}
+
+
+
+/* HTML: <div class="loader"></div> */
+.loaderr {
+  height: 60px;
+  aspect-ratio: .866;
+  display: grid;
+  background: conic-gradient(from -121deg at right,#0000, #BF1E62 1deg 60deg,#0000 61deg);
+  animation: l12 2s infinite linear;
+  transform-origin: 33% 50%;
+}
+.loaderr:before,
+.loaderr:after {
+  content: "";
+  grid-area: 1/1;
+  background: conic-gradient(from -121deg at right,#0000, #FFA588 1deg 60deg,#0000 61deg);
+  transform-origin: inherit;
+  animation: inherit;
+}
+.loaderr:after {
+  background: conic-gradient(from -121deg at right,#0000, #027B7F 1deg 60deg,#0000 61deg);
+  animation-duration: 3s;
+}
+@keyframes l12{
+  100% {transform: rotate(1turn)}
+}
+
