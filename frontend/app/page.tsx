@@ -1,4 +1,5 @@
 import { Hero } from "./components/Hero";
+import { Home } from "./components/Home"
 import Dashboard from "./dashboard/page";
 
 
@@ -9,6 +10,8 @@ export default function Home() {
 
       <Hero />
       {/* <Dashboard /> */}
+
+      {/* <Home /> */}
     </div>
   );
 }

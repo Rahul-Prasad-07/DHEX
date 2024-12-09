@@ -106,7 +106,7 @@ export function Swap({ publicKey, tokenBalances }: { publicKey: string, tokenBal
 
             <div className="flex justify-center">
                 <div onClick={() => {
-                    let baseAssetTemp = baseAsset;
+                    const baseAssetTemp = baseAsset;
                     setBaseAsset(quoteAsset);
                     setQuoteAsset(baseAssetTemp);
                 }} className="cursor-pointer rounded-full w-10 h-10 border absolute mt-[-20px] bg-white flex justify-center pt-2 ">

@@ -227,3 +227,29 @@ body {
   100% {transform: rotate(1turn)}
 }
 
+
+/* HTML: <div class="loaderHero"></div> */
+.loaderHero {
+  width: 40px;
+  aspect-ratio: 1;
+  display: grid;
+  animation: l14 4s infinite;
+}
+.loaderHero::before,
+.loaderHero::after {    
+  content: "";
+  grid-area: 1/1;
+  border: 6px solid;
+  border-radius: 50%;
+  border-color: red red #0000 #0000;
+  mix-blend-mode: darken;
+  animation: l14 1s infinite linear;
+}
+.loaderHero::after {
+  border-color: #0000 #0000 blue blue;
+  animation-direction: reverse;
+}
+@keyframes l14{ 
+  100%{transform: rotate(1turn)}
+}
+
